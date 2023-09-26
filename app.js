@@ -9,6 +9,16 @@ const path = require('path');
 const userRoutes = require('./routes/user');
 const { constants } = require('./configs/constants');
 
+// Utilize a more restrictive policy if needed
+app.use(
+  cors({
+    origin: "*",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+  })
+);
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, "/documents")));
