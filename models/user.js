@@ -18,7 +18,6 @@ const User = sequelize.define('user', {
   about_store: Sequelize.STRING,
   academics: Sequelize.STRING,
   exhibitions: Sequelize.STRING,
-},
 });
 
 module.exports = User;
