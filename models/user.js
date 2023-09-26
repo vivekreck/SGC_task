@@ -17,20 +17,8 @@ const User = sequelize.define('user', {
   shop_banner: Sequelize.STRING,
   about_store: Sequelize.STRING,
   academics: Sequelize.STRING,
-  exhibitions: {
-    type: Sequelize.STRING,
-    get: function () {
-      const value = this.getDataValue("exhibitions");
-      if (!value) {
-        return value;
-      } else {
-        return JSON.parse(value);
-      }
-    },
-    set: function (value) {
-      return this.setDataValue("exhibitions", JSON.stringify(value));
-    },
-  },
+  exhibitions: Sequelize.STRING,
+},
 });
 
 module.exports = User;
