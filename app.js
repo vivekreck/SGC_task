@@ -5,7 +5,7 @@ const sequelize = require('./util/database');
 
 const app = express();
 const path = require('path');
-
+const cors = require('cors');
 const userRoutes = require('./routes/user');
 const { constants } = require('./configs/constants');
 
